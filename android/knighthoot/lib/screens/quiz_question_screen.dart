@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import '../models/user.dart';
-import '../models/quiz_session.dart';
-import '../services/quiz_service.dart';
+import '../services/quiz_session.dart';
+import '../services/quiz_services.dart';
 import 'answer_feedback_screen.dart';
 import 'quiz_results_screen.dart';
 

@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import '../models/quiz_session.dart';
+import '../services/quiz_session.dart';
 
 class QuizService {
   static const String baseUrl = 'http://localhost:5173/api';
