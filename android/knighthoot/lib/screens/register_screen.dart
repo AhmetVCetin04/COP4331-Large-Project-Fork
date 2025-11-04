@@ -83,11 +83,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Color(0xFFFFC904)),
           onPressed: () {
-            Navigator.push(
+            Navigator.pushAndRemoveUntil(
               context,
               MaterialPageRoute(
                 builder: (context) => const WelcomeScreen(),
               ),
+              (route) => false,
             );
           },
         ),
