@@ -1,10 +1,10 @@
-// File: lib/screens/login_screen.dart
 import 'package:flutter/material.dart';
 import 'package:knighthoot/screens/welcome_screen.dart';
 import '../services/api_service.dart';
 import '../models/user.dart';
 import 'register_screen.dart';
 import 'join_quiz_screen.dart';
+import 'forgot_password_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -245,7 +245,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         alignment: Alignment.centerLeft,
                         child: TextButton(
                           onPressed: () {
-                            // TODO: Implement forgot password
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const ForgotPasswordScreen(),
+                              ),
+                            );
                           },
                           style: TextButton.styleFrom(
                             padding: EdgeInsets.zero,

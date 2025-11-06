@@ -212,48 +212,51 @@ class _JoinQuizScreenState extends State<JoinQuizScreen> {
                       const SizedBox(height: 40),
 
                       // Test Pin Input
-                      TextField(
-                        controller: _pinController,
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black,
+                      SizedBox(
+                        height: 52,
+                        child: TextField(
+                          controller: _pinController,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w500,
+                            color: Colors.black,
+                          ),
+                          decoration: InputDecoration(
+                            hintText: 'Test Pin',
+                            hintStyle: const TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.normal,
+                            ),
+                            filled: true,
+                            fillColor: Colors.white,
+                            border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(8),
+                              borderSide: BorderSide.none,
+                            ),
+                            contentPadding: const EdgeInsets.symmetric(
+                              horizontal: 16,
+                              vertical: 16,
+                            ),
+                          ),
+                          keyboardType: TextInputType.number,
+                          maxLength: 6,
+                          buildCounter: (context, {required currentLength, required isFocused, maxLength}) {
+                            return null; // Hide counter
+                          },
                         ),
-                        decoration: InputDecoration(
-                          hintText: 'Test Pin',
-                          hintStyle: const TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.normal,
-                          ),
-                          filled: true,
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(8),
-                            borderSide: BorderSide.none,
-                          ),
-                          contentPadding: const EdgeInsets.symmetric(
-                            horizontal: 16,
-                            vertical: 16,
-                          ),
-                        ),
-                        keyboardType: TextInputType.number,
-                        maxLength: 6,
-                        buildCounter: (context, {required currentLength, required isFocused, maxLength}) {
-                          return null; // Hide counter
-                        },
                       ),
                       const SizedBox(height: 24),
 
                       // Enter Button
                       SizedBox(
+                        height: 48,
                         width: double.infinity,
                         child: ElevatedButton(
                           onPressed: _isLoading ? null : _handleJoinQuiz,
                           style: ElevatedButton.styleFrom(
                             backgroundColor: const Color(0xFFFFC904),
                             foregroundColor: Colors.black,
-                            padding: const EdgeInsets.symmetric(vertical: 16),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8),
                             ),

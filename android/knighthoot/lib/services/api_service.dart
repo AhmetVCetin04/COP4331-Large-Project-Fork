@@ -127,4 +127,29 @@ class ApiService {
       throw Exception('Connection error: $e');
     }
   }
+
+  static Future<Map<String, dynamic>> updatePassword({
+    required String email,
+    required String newPassword,
+  }) async {
+    try {
+      final response = await http.post(
+        Uri.parse('$baseUrl/resetPassword'),
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode({
+          'email': email,
+          'newPassword': newPassword,
+        }),
+      );
+
+      if (response.statusCode == 200) {
+        return jsonDecode(response.body);
+      } else {
+        final error = jsonDecode(response.body);
+        throw Exception(error['error'] ?? 'Failed to reset password');
+      }
+    } catch (e) {
+      throw Exception('Connection error: $e');
+    }
+  }
 }
